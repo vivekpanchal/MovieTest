@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MovieTest</string>
+    <string name="base_url">https://api.themoviedb.org/3/</string>
+    <string name="API_KEY">d411ae8547a5999d5d617464c27bced9</string>
+</resources>
