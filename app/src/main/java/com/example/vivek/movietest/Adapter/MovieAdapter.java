@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.vivek.movietest.Models.MovieList;
-import com.example.vivek.movietest.Models.Result;
+import com.example.vivek.movietest.Models.Movie;
+import com.example.vivek.movietest.Models.MovieResponse;
 import com.example.vivek.movietest.R;
 import com.squareup.picasso.Picasso;
 
@@ -18,11 +18,23 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
     private Context context;
-    private List<Result> movielist;
+    private List<Movie> movies;
 
-    public MovieAdapter(Context context, List<Result> movielist) {
+    public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
-        this.movielist = movielist;
+        this.movies = movies;
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public ImageView thumbnails;
+        public TextView title;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            thumbnails = itemView.findViewById(R.id.movie_image);
+            title = itemView.findViewById(R.id.movie_name);
+
+        }
     }
 
     @NonNull
@@ -36,25 +48,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.title.setText(movielist.get(position).getOriginalTitle());
-        Picasso.get().load(movielist.get(position).getPosterPath()).into(holder.thumbnails);
+        holder.title.setText(movies.get(position).getTitle());
+        Picasso.get().load(movies.get(position).getPosterPath()).into(holder.thumbnails);
     }
 
     @Override
     public int getItemCount() {
-        return movielist.size();
+        return movies.size();
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnails;
-        public TextView title;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            thumbnails = itemView.findViewById(R.id.movie_image);
-            title = itemView.findViewById(R.id.movie_name);
-
-        }
-    }
 }
