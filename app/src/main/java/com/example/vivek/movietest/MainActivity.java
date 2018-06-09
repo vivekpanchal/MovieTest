@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
                 if (response.body() != null) {
-
+                movielist=response.body().getResult();
                 }
             }
 
