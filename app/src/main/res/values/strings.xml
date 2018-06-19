@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MovieTest</string>
     <string name="base_url">https://api.themoviedb.org/3/</string>
+    <string name="backdrop_image_of_the_movie">backdrop image of the movie</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movierating">movieRating</string>
+    <string name="_23_4_2018">23-4-2018</string>
+    <string name="overview">OverView</string>
 </resources>

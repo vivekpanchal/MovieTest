@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00e676</color>
-    <color name="colorPrimaryDark">#00b248</color>
+    <color name="colorPrimary">#01d277</color>
+    <color name="colorPrimaryDark">#081c24</color>
+    <!--secondary primary color  009f4a-->
     <color name="colorPrimaryLight">#66ffa6</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="textcolor">#ffff</color>
+    <color name="toolbarColor">#13000000</color>
+    <color name="toolbarPrimary">#919191</color>
+    <color name="toolbarPrimaryDark">#ba232323</color>
+    <color name="toolbarAccent">#ffe100</color>
 </resources>

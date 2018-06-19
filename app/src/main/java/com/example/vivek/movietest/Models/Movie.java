@@ -58,10 +58,11 @@ public class Movie {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return  "http://image.tmdb.org/t/p/w500/"+posterPath;
     }
 
     public void setPosterPath(String posterPath) {
+
         this.posterPath = posterPath;
     }
 
@@ -130,7 +131,7 @@ public class Movie {
     }
 
     public String getBackdropPath() {
-        return backdropPath;
+        return  "http://image.tmdb.org/t/p/w780/"+backdropPath;
     }
 
     public void setBackdropPath(String backdropPath) {
