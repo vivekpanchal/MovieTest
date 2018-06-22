@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ProgressBar progressBar;
 
-    private final static String API_KEY = "d411ae8547a5999d5d617464c27bced9";
+    private final static String API_KEY = "API key goes here";
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
