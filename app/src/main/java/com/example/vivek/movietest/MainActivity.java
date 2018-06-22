@@ -31,11 +31,14 @@ import com.example.vivek.movietest.Networking.ApiInterface;
 import java.util.List;
 
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    @BindView(R.id.recycle_list)
     RecyclerView recyclerView;
     MovieAdapter movieAdapter;
 
@@ -51,21 +54,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         intView();
 
+
         loadPopularMovies();
     }
+
     private void intView() {
-        recyclerView = findViewById(R.id.recycle_list);
-        toolbar=findViewById(R.id.my_toolbar);
+        toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_sort_black_24dp);
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_sort_black_24dp);
         toolbar.setOverflowIcon(drawable);
+        ButterKnife.bind(this);
 
 
-        progressBar=findViewById(R.id.pb);
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+        progressBar = findViewById(R.id.pb);
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
             recyclerView.setAdapter(movieAdapter);
-        }else{
+        } else {
             recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             recyclerView.setAdapter(movieAdapter);
             progressBar.setVisibility(View.VISIBLE);
@@ -98,13 +103,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void loadPopularMovies(){
-        ApiInterface apiInterface =ApiClient.getClient().create(ApiInterface.class);
+
+    public void loadPopularMovies() {
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<MovieResponse> call = apiInterface.getPopularMovies(API_KEY);
         progressBar.setVisibility(View.VISIBLE);
         fetchData(call);
     }
-    public void loadTopRatedMovies(){
+
+    public void loadTopRatedMovies() {
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<MovieResponse> call = apiInterface.getTopRatedMovies(API_KEY);
         progressBar.setVisibility(View.VISIBLE);
@@ -114,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
 
     }
@@ -123,12 +130,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.top_rated:
-                Toast.makeText(getApplicationContext(),"Top rated selected",Toast.LENGTH_SHORT).show();
                 loadTopRatedMovies();
-
                 return true;
             case R.id.popular:
-                Toast.makeText(getApplicationContext(),"Popular  selected",Toast.LENGTH_SHORT).show();
                 loadPopularMovies();
                 return true;
 

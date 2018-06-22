@@ -3,6 +3,7 @@ package com.example.vivek.movietest.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +18,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
     private Context context;
     private List<Movie> movies;
@@ -29,13 +33,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnails;
-        public CardView cardView;
+        @BindView(R.id.movie_image)
+        ImageView thumbnails;
+        @BindView(R.id.movie_card)
+        CardView cardView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            thumbnails = itemView.findViewById(R.id.movie_image);
-            cardView = itemView.findViewById(R.id.movie_card);
+            ButterKnife.bind(this,itemView);
 
         }
     }
@@ -61,9 +66,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                 intent.putExtra("overview", movies.get(position).getOverview());
                 intent.putExtra("vote_average", Double.toString(movies.get(position).getVoteAverage()));
                 intent.putExtra("release_date", movies.get(position).getReleaseDate());
-                intent.putExtra("full_img",movies.get(position).getBackdropPath());
+                intent.putExtra("full_img", movies.get(position).getBackdropPath());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
+
             }
         });
     }
