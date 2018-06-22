@@ -2,20 +2,20 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/parent_width_height"
+   style="@style/parent_widht_height"
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        style="@style/Default_toolbar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        style="@style/Default_toolbarStyle">
 
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_list"
-        style="@style/RecylerView_style"
+        style="@style/RecyclerViewStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +26,10 @@
 
     <ProgressBar
         android:id="@+id/pb"
-        style="@style/progressBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recycle_list" />
+        app:layout_constraintTop_toTopOf="@+id/recycle_list"
+        style="@style/progressBar" />
 </android.support.constraint.ConstraintLayout>

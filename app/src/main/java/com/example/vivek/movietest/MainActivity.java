@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ProgressBar progressBar;
 
-    private final static String API_KEY = "insert your API key";
+    private final static String API_KEY = "d411ae8547a5999d5d617464c27bced9";
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void intView() {
         toolbar = findViewById(R.id.my_toolbar);
+
         setSupportActionBar(toolbar);
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_sort_black_24dp);
         toolbar.setOverflowIcon(drawable);
@@ -83,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                 if (response.body() != null) {
-//                    int status=response.code();
                     try {
                         assert response.body() != null;
                         List<Movie> movies = response.body().getResults();
                         progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                         recyclerView.setAdapter(new MovieAdapter(MainActivity.this, movies));
                     } catch (NullPointerException e) {
                         Log.d(TAG, "onResponse: null pointer aarha h ");

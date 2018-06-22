@@ -2,18 +2,17 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/parent_width_height"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    style="@style/parent_widht_height">
 
-    <android.support.constraint.ConstraintLayout
-        style="@style/parentWidth_height_wrap">
+    <android.support.constraint.ConstraintLayout style="@style/parent_widht_height_wrapContent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/detail_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            >
-        </android.support.v7.widget.Toolbar>
+            android:elevation="10dp"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp" />
 
         <ImageView
             android:id="@+id/full_img"
@@ -33,7 +32,6 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="212dp"
-            android:transitionName="MoviePoster"
             app:layout_constraintEnd_toEndOf="@+id/full_img"
             app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="@+id/full_img"
@@ -47,7 +45,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:drawableLeft="@drawable/ic_title_black_24dp"
+            android:drawableStart="@drawable/ic_title_black_24dp"
             android:drawablePadding="5dp"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
@@ -72,7 +70,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:drawableLeft="@drawable/ic_star"
+            android:drawableStart="@drawable/ic_star"
             android:drawablePadding="5dp"
             android:text="@string/movierating"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -87,7 +85,7 @@
             android:layout_height="22dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:drawableLeft="@drawable/ic_date"
+            android:drawableStart="@drawable/ic_date"
             android:drawablePadding="5dp"
             android:text="@string/_23_4_2018"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -105,7 +103,6 @@
             android:layout_margin="10dp"
             android:layout_marginEnd="8dp"
             android:padding="5dp"
-            android:text=""
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,12 +112,12 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="129dp"
             android:layout_height="25dp"
             android:layout_marginTop="8dp"
             android:text="@string/overview"
             android:textSize="18sp"
-            style="@style/TextAppearance.AppCompat.Title"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/posterImg"
             app:layout_constraintTop_toBottomOf="@+id/posterImg" />

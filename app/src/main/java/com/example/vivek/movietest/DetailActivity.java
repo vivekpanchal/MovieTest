@@ -29,6 +29,7 @@ public class DetailActivity extends AppCompatActivity {
     ImageView movieFullimg;
     @BindView(R.id.posterImg)
     ImageView moviePosterImg;
+    @BindView(R.id.detail_toolbar)
     Toolbar tb;
 
 
@@ -37,10 +38,8 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        tb = findViewById(R.id.detail_toolbar);
-        tb.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-        setSupportActionBar(tb);
         tb.setTitle(" ");
+        setSupportActionBar(tb);
         movie_title.setSelected(true);
         Intent intent = getIntent();
         if (intent.hasExtra("original_title")) {
