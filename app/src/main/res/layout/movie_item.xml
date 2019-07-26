@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/movie_image"
-        style="@style/Card_MovieImgstyle" />
+        style="@style/Card_MovieImgstyle"
+        />
 
 </android.support.v7.widget.CardView>

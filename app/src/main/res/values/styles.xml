@@ -16,7 +16,7 @@
     </style>
 
     <style name="Movie_cardstyle">
-        <item name="android:layout_width">172dp</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">250dp</item>
         <item name="android:layout_margin">5dp</item>
         <item name="android:clickable">true</item>

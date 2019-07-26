@@ -8,8 +8,11 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        style="@style/Default_toolbarStyle">
+        style="@style/Default_toolbarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     </android.support.v7.widget.Toolbar>
 
